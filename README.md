@@ -107,7 +107,7 @@ Here, the value of each element mij of the matrix M is defined as below. Figure 
 
 位置 li 和 lj 之间的相似度 siml(lj,li) 定义为:
 
-$sim_l(l_i,l_j) = { {l_i*l_j} \over {|l_i||l_j|} }$ ,
+sim<sub>l</sub> (li,l_j) = { {l_i*l_j} \over {|l_i||l_j|} } ,
 
 这是基于余弦相似性
 
