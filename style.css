@@ -1,3 +1,7 @@
 html{
     font-family: 楷体;
 }
+
+p.big{
+    font-size: large;
+}
