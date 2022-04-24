@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>猜数字游戏</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        .lastResult {
+            color: white;
+            padding: 3px;
+        }
+
+        .lowOrHi {
+            text-align: center;
+            color: white;
+        }
+
+        span {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>猜数字游戏</h1>
+    <p>选择一个数字范围, 我会从范围里选择一个数, 由你来猜出这个数字, 每次我都会告诉你猜的数字是大了还是小了</p>
+    <select name="" id="scope">
+        <option value="">请选择范围</option>
+        <option value="100">0 - 100</option>
+        <option value="1000">0 - 1000</option>
+        <option value="10000">0 - 10000</option>
+    </select>
+
+    <div class="form">
+        <label for="guessField">请猜数: </label>
+        <input type="number" id="guessField" class="guessField">
+        <input type="submit" value="确定" class="guessSubmit">
+    </div>
+
+    <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lowOrHi"></p>
+    </div>
+
+    <script>
+        const scope = document.querySelector('#scope');
+        let randNumber;//创建随机数
+
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+
+        let guessCount = 0;//记录已进行判断的次数
+
+
+        function checkScope() {
+            guesses.textContent = '';
+            lowOrHi.style.visibility = 'hidden';
+
+            if (scope.value !== '') {
+                randNumber = Math.floor(Math.random() * scope.value) + 1;
+                guessCount = 1;
+            }
+            else
+            guessCount = 0;
+
+        }
+
+
+        function checkGuess() {
+            let userGuess = Number(guessField.value);
+
+            lowOrHi.style.visibility = 'visible';
+            if (guessCount === 1) {
+                guesses.textContent = '猜过的数: ';
+            }
+
+            let GuessNum = document.createElement('span');
+            guesses.appendChild(GuessNum);
+
+            if (scope.value === '') {
+                lowOrHi.style.backgroundColor = 'red';
+                lowOrHi.textContent = '请选择范围';
+                return;
+            }
+            else if (userGuess < randNumber) {
+                lowOrHi.textContent = '你猜的数小了';
+                lowOrHi.style.backgroundColor = 'blue';
+                GuessNum.style.color = 'blue';
+
+            }
+            else if (userGuess > randNumber) {
+                lowOrHi.textContent = '你猜的数大了';
+                lowOrHi.style.backgroundColor = 'red';
+                GuessNum.style.color = 'red';
+            }
+            else {
+                lowOrHi.textContent = '你猜对了';
+                lowOrHi.style.backgroundColor = 'green';
+                GuessNum.style.color = 'green';
+            }
+            GuessNum.textContent = userGuess + ' ';
+
+            guessCount++;
+            guessField.value = '';
+            guessField.focus();
+        }
+        guessSubmit.addEventListener('click', checkGuess);
+        scope.addEventListener('change', checkScope);
+
+    </script>
+</body>
+
+</html>
