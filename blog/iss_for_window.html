@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>在windows中设置iis</title>
+    <link rel="stylesheet" href="/styles/style_wen.css">
+</head>
+
+<body>
+    <h1>在windows中设置IIS</h1>
+    <h2>引言</h2>
+    <p>因为本地调试html文件会有一些标签无法使用, 比如<a
+            href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/track">&lt;track&gt;</a>, <a
+            href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/iframe">&lt;iframe&gt;</a>,
+        因此尝试用windows系统自带的 Internet Information Services 管理器(以下称<code>IIS</code>)来搭建一个服务器, 以便使用http在内网中进行本地调试.
+    </p>
+    <h2>1.修改要调试的文件夹的访问权限</h2>
+    <p>找到要进行调试的文件夹, <kbd>右键其</kbd> &gt; <kbd>属性</kbd> &gt; <kbd>安全</kbd> &gt; <kbd>编辑</kbd> &gt; <kbd>添加</kbd> &gt;
+        <kbd>填入Everyone</kbd> &gt; <kbd>确定</kbd></p>
+    <img src="img/5.png">
+    <h2>2.启用IIS</h2>
+    <p><kbd>控制面板</kbd> > <kbd>程序和功能</kbd> > <kbd>启用或关闭Windows功能</kbd> > <kbd>勾选红框中的两个项目</kbd></p>
+    <img src="img/1.png">
+
+    <h2>3.创建内网网站</h2>
+    <p><kbd>Win</kbd> + <kbd>S</kbd> 搜索 <code>IIS</code>, 打开应用</p>
+    <img src="img/2.png">
+    <p>点开左边的项目, 右键<kbd>网站</kbd>, 点击<kbd>添加网站</kbd></p>
+    <img src="img/3.png">
+    <p>网站名称随意, 应用程序池选择<code>DefaultAppPool</code>, 物理路径选择要调试的文件夹, IP地址随便选一个, 端口随便填(只要别和已有的相同ip地址的网站的端口重复)</p>
+    <img src="img/4.png">
+    <p>点击<kbd>确定</kbd>, 创建成功 </p>
+    <p>再点左边的<kbd>浏览网站</kbd>, 测试一下</p>
+    <img src="img/6.png">
+    <img src="img/7.png">
+    <p>大功告成</p>
+
+</body>
+
+</html>
