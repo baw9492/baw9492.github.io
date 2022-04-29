@@ -8,7 +8,8 @@
             "type": "pwa-msedge",
             "request": "launch",
             "name": "Open Guessnumbers.html",
-            "file": "c:\\Users\\15855\\Documents\\GitHub\\baw9492.github.io\\blog\\Brush_lesson_script.html"
+            // "url": "http://localhost:8080"
+            "file": "${workspaceFolder}/test.html"
         }
     ]
 }
