@@ -8,8 +8,7 @@
             "type": "pwa-msedge",
             "request": "launch",
             "name": "Open Guessnumbers.html",
-            // "url": "http://localhost:8080"
-            "file": "${workspaceFolder}/test.html"
+            "url": "http://localhost/test/index.html"
         }
     ]
 }
