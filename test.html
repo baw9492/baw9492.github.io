@@ -1,48 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <title>test</title>
-    <style>
-        * {
-            margin: 0%;
-            padding: 0%;
-            box-sizing: border-box;
-            color: white;
-            
-        }
-
-        body {
-            margin: 30px 30px;
-            background-color: #333333;
-        }
-
-        .codeBlock {
-            padding: 12px;
-            font-family: Consolas, 仿宋;
-            font-size: 16px;
-            color: white;
-            background-color: #1E1E1E;
-        }
-
-        .vardef {
-            color: #629CD7;
-        }
-
-        .varname {
-            color: #A5DCFF;
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>document</title>
 </head>
 
 <body>
-    <pre class="js codeBlock"><span class="vardef">let</span> <span class="varname">pare</span></pre>
+    <p>Press inside this IFrame first to focus it, then try pressing keys on the keyboard.</p>
+    <p id="log"></p>
 </body>
 <script>
-    let pare = document.createElement('p');
-    pare.textContent = '你好世界';
-    document.body.append(pare);
+    const log = document.getElementById('log');
+
+    document.addEventListener('keydown', logKey, { passive: false });
+
+    function logKey(e) {
+        e.preventDefault();
+        log.textContent += ` ${e.code}`;
+    }
 </script>
 
 </html>

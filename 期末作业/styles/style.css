@@ -1,0 +1,74 @@
+.Block {
+    height: calc(100vh - 80px);
+    scroll-margin-top: 80px;
+    padding-top: 8vh;
+    scroll-snap-align: center;
+}
+
+.blockTitle {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 200;
+    color: black;
+}
+
+.blockTitle::after {
+    content: '';
+    display: block;
+    width: 180px;
+    margin: auto;
+    margin-top: 0px;
+    border-bottom: 2px solid currentColor;
+}
+
+html {
+    /* overflow: hidden; */
+    scroll-snap-type: y mandatory;
+
+}
+
+
+ul.completed_Project {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    margin: 20px auto;
+    list-style: none;
+}
+
+.completed_Project li {
+    text-align: center;
+
+}
+
+.totalNum {
+    color: #46BB9B;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.projectName {
+    color: #46BB9B;
+    /* font-size: 40px; */
+
+}
+
+
+
+
+.BlockTitle::after {
+    content: '';
+    display: block;
+    width: 180px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+}
+
+
+.ACHIEVEMENT.Block {
+    background-color: gray;
+}

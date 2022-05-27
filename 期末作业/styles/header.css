@@ -1,0 +1,47 @@
+header {
+    background-color: white;
+    position: sticky;
+    top: 0%;
+    border-bottom: 4px solid #46BB9B;
+}
+
+.head {
+    position: relative;
+    min-width: 1000px;
+    width: 90%;
+    height: 80px;
+    padding: 0% 30px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: beige; */
+}
+
+.whead.title {
+    font-family: 微软雅黑;
+    font-size: 45px;
+    font-weight: 600;
+}
+
+.whead {
+    display: inline;
+    color: #46BB9B;
+}
+
+.hLinkList {
+    position: absolute;
+    right: 0px;
+}
+
+.hLink {
+    font-size: 16px;
+    text-decoration-line: none;
+    margin: 0% 12px;
+    font-weight: 600;
+
+}
+
+.hLink:hover {
+    text-decoration-line: underline;
+}

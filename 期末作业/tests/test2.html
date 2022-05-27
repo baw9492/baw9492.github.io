@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>document</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        .portfolioSelectorsList {
+            text-align: center;
+        }
+
+        .protfolisSelector {
+            width: 180px;
+            font-size: 16px;
+            padding: 12px;
+            border: 0px;
+            color: #46BB9B;
+            background-color: white;
+        }
+
+        .protfolisSelector.checked {
+            border: currentColor 2px solid;
+        }
+
+        .showPortfolioList {
+            display: grid;
+            grid-template-columns: repeat(6, 100vw);
+            overflow: auto;
+            font-size: 0px;
+            overflow-x: hidden
+        }
+
+        .showPortfolio {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 6px;
+            padding: 0px 6px;
+        }
+
+        .showPortfolio img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="portfolioSelectorsList">
+        <button class="protfolisSelector checked">SHOW ALL</button>
+        <button class="protfolisSelector">ILLUSTRATIONS</button>
+        <button class="protfolisSelector">LATEST PROJECTS</button>
+        <button class="protfolisSelector">PHOROS</button>
+        <button class="protfolisSelector">VIDEOS</button>
+        <button class="protfolisSelector">WEB DESIGN</button>
+    </div>
+
+    <div class="showPortfolioList">
+        <div class="show_all showPortfolio">
+            <img src="../img/1.png" alt=""><img src="../img/1.png" alt=""><img src="../img/1.png" alt=""><img
+                src="../img/1.png" alt="">
+            <img src="../img/1.png" alt=""><img src="../img/1.png" alt=""><img src="../img/1.png" alt=""><img
+                src="../img/1.png" alt="">
+        </div>
+        <div class="illustrations showPortfolio">
+            <img src="../img/2.png" alt=""><img src="../img/2.png" alt=""><img src="../img/2.png" alt=""><img
+                src="../img/2.png" alt="">
+            <img src="../img/2.png" alt=""><img src="../img/2.png" alt=""><img src="../img/2.png" alt=""><img
+                src="../img/2.png" alt="">
+        </div>
+        <div class="latest_projects showPortfolio">
+            <img src="../img/3.png" alt=""><img src="../img/3.png" alt=""><img src="../img/3.png" alt=""><img
+                src="../img/3.png" alt=""><img src="../img/3.png" alt=""><img src="../img/3.png" alt=""><img
+                src="../img/3.png" alt=""><img src="../img/3.png" alt="">
+        </div>
+        <div class="phoros showPortfolio">
+            <img src="../img/4.png" alt=""><img src="../img/4.png" alt=""><img src="../img/4.png" alt=""><img
+                src="../img/4.png" alt=""><img src="../img/4.png" alt=""><img src="../img/4.png" alt=""><img
+                src="../img/4.png" alt=""><img src="../img/4.png" alt="">
+        </div>
+        <div class="videos showPortfolio">
+            <img src="../img/5.png" alt=""><img src="../img/5.png" alt=""><img src="../img/5.png" alt=""><img
+                src="../img/5.png" alt=""><img src="../img/5.png" alt=""><img src="../img/5.png" alt=""><img
+                src="../img/5.png" alt=""><img src="../img/5.png" alt="">
+        </div>
+        <div class="webdesign showPortfolio">
+            <img src="../img/6.png" alt=""><img src="../img/6.png" alt=""><img src="../img/6.png" alt=""><img
+                src="../img/6.png" alt=""><img src="../img/6.png" alt=""><img src="../img/6.png" alt=""><img
+                src="../img/6.png" alt=""><img src="../img/6.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    const protfolisSelectorArr = document.getElementsByClassName('protfolisSelector');
+    const showPortfolioList = document.querySelector('.showPortfolioList');
+
+    function changeChecked(event) {
+        //清除之前被选中的 protfolisSelector 
+        for (let i = 0; i < protfolisSelectorArr.length; i++) {
+            protfolisSelectorArr[i].setAttribute('class', 'protfolisSelector');
+        }
+
+        //更新被选中的 protfolisSelector
+        event.target.setAttribute('class', 'protfolisSelector checked');
+
+        //查找应该滚动到的位置
+        let xPosition = window.innerWidth;
+        for (let i = 0; i < protfolisSelectorArr.length; i++) {
+            if (protfolisSelectorArr[i].getAttribute('class') === 'protfolisSelector checked') {
+                xPosition *= i;
+                break;
+            }
+        }
+
+        //进行滚动
+        showPortfolioList.scrollTo({
+            left: xPosition,
+            behavior: "smooth"
+        });
+    }
+
+    //给每个 protfolisSelector 添加事件监听
+    for (let i = 0; i < protfolisSelectorArr.length; i++) {
+        protfolisSelectorArr[i].addEventListener('click', changeChecked);
+    }
+</script>
+
+</html>

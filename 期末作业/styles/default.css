@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    /* background-color: white; */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5CBB9A;
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    /* font-size: 0%; */
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-drag: none;
+    caret-color: #2a7b5f
+}
+
+html {
+    scroll-behavior: smooth;
+}

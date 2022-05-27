@@ -1,0 +1,45 @@
+.welcome.Block {
+    padding: 0%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: gray
+}
+
+.welcomeTitle {
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.welcome p {
+    font-size: 20px;
+    color: white;
+    /* text-shadow: 1px 1px 2px whitesmoke; */
+    width: 70%;
+    margin: 30px 0px;
+}
+
+.welcome a {
+    text-decoration-line: none;
+    line-height: 80px;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    /* text-shadow: 1px 1px 3px whitesmoke; */
+    height: 80px;
+    width: 360px;
+    background-color: #46BB9B;
+    border-radius: 5px;
+}
+
+.welcome a:hover {
+    text-shadow: 0px 0px 4px white;
+}
+
+.welcome a:active {
+    text-shadow: 0px 0px 4px white;
+    opacity: 0.8;
+}
