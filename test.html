@@ -8,18 +8,10 @@
 </head>
 
 <body>
-    <p>Press inside this IFrame first to focus it, then try pressing keys on the keyboard.</p>
-    <p id="log"></p>
+    <iframe src="//player.bilibili.com/player.html?aid=341809919&bvid=BV1CR4y1w7uQ&cid=736231521&page=1" scrolling="no"
+        border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="540px"> </iframe>
 </body>
 <script>
-    const log = document.getElementById('log');
-
-    document.addEventListener('keydown', logKey, { passive: false });
-
-    function logKey(e) {
-        e.preventDefault();
-        log.textContent += ` ${e.code}`;
-    }
 </script>
 
 </html>

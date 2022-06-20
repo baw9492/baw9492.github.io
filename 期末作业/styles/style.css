@@ -27,6 +27,10 @@ html {
 
 }
 
+body {
+    min-height: 960px;
+    min-width: 1200px;
+}
 
 ul.completed_Project {
     display: flex;
