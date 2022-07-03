@@ -1,0 +1,10 @@
+.ACHIEVEMENT.blockTitle {
+    color: rgb(211, 211, 211);
+}
+
+#achievement img {
+    width: 80%;
+    display: block;
+    margin: auto;
+    margin-top: 90px;
+}

@@ -2,6 +2,10 @@
     background-color: white;
 }
 
+.PORTFOLIO.blockTitle {
+    color: #46BB9B;
+}
+
 .portfolioSelectorsList {
     text-align: center;
 }
